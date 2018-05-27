@@ -7,37 +7,7 @@ import "zeppelin-solidity/contracts/crowdsale/distribution/RefundableCrowdsale.s
 import "zeppelin-solidity/contracts/token/ERC20/MintableToken.sol";
 
 import "./MensariiCoin.sol";
-// import "./MensariiTokenHolder.sol";
 
-/**
- * @title SampleCrowdsaleToken
- * @dev Very simple ERC20 Token that can be minted.
- * It is meant to be used in a crowdsale contract.
- */
-// contract MintableMensariiToken is MintableToken {
-//   string public name = "MensariiToken";
-//   string public symbol = "TT";
-//   uint8 public decimals = 2;
-//   uint public INITIAL_SUPPLY = 12000;
-
-//   function MintableMensariiToken() public {
-//     totalSupply_ = INITIAL_SUPPLY;
-//     balances[msg.sender] = INITIAL_SUPPLY;
-//   }
-
-// }
-
-/**
- * @title SampleCrowdsale
- * @dev This is an example of a fully fledged crowdsale.
- * The way to add new features to a base crowdsale is by multiple inheritance.
- * In this example we are providing following extensions:
- * CappedCrowdsale - sets a max boundary for raised funds
- * RefundableCrowdsale - set a min goal to be reached and returns funds if it's not met
- *
- * After adding multiple features it's good practice to run integration tests
- * to ensure that subcontracts works together as intended.
- */
 contract MensariiCrowdsale is CappedCrowdsale, TimedCrowdsale, RefundableCrowdsale, MintedCrowdsale {
 
   function MensariiCrowdsale(uint256 _startTime, uint256 _endTime, uint256 _rate, uint256 _goal, uint256 _cap, address _wallet, MintableToken _token) public
