@@ -2,11 +2,12 @@ pragma solidity ^0.4.19;
 
 import 'zeppelin-solidity/contracts/token/ERC20/MintableToken.sol';
 import 'zeppelin-solidity/contracts/token/ERC20/BurnableToken.sol';
+import 'zeppelin-solidity/contracts/token/ERC20/PausableToken.sol';
 import './DisableSelfTransfer.sol';
 import './OwnerContract.sol';
 
 
-contract MintableContractOwnerToken is MintableToken, BurnableToken, OwnerContract, DisableSelfTransfer {
+contract MintableContractOwnerToken is PausableToken, MintableToken, BurnableToken, OwnerContract, DisableSelfTransfer {
 
   bool burnAllowed = false;
 
